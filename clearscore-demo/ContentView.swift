@@ -9,12 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, test!")
-        }
+//        ZStack {
+//            Circle()
+//                .inset(by: 50)
+//                .stroke(Color.blue, lineWidth: 8)
+            VStack{
+                Button(action: {
+                    
+                }){
+                    VStack{
+                        Text("Your credit score is")
+                        Text("300")
+                        Text("out of 700")
+                    }
+                    .frame(width: 300, height: 300)
+                    .foregroundColor(Color.white)
+                    .background(Color.gray)
+                    .clipShape(Circle())
+                }
+            }
+//        }
         .padding()
     }
 }
