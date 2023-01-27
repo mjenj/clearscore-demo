@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5ED570AB298413E500CA1595 /* clearscore_demoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED570AA298413E500CA1595 /* clearscore_demoApp.swift */; };
-		5ED570AD298413E500CA1595 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED570AC298413E500CA1595 /* ContentView.swift */; };
+		5ED570AD298413E500CA1595 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED570AC298413E500CA1595 /* MainView.swift */; };
 		5ED570AF298413E700CA1595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED570AE298413E700CA1595 /* Assets.xcassets */; };
 		5ED570B2298413E700CA1595 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED570B1298413E700CA1595 /* Preview Assets.xcassets */; };
 		5ED570BC298413E800CA1595 /* clearscore_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED570BB298413E800CA1595 /* clearscore_demoTests.swift */; };
 		5ED570C6298413E800CA1595 /* clearscore_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED570C5298413E800CA1595 /* clearscore_demoUITests.swift */; };
 		5ED570C8298413E800CA1595 /* clearscore_demoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED570C7298413E800CA1595 /* clearscore_demoUITestsLaunchTests.swift */; };
+		5ED570D529845AA300CA1595 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED570D429845AA300CA1595 /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		5ED570A7298413E500CA1595 /* clearscore-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "clearscore-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED570AA298413E500CA1595 /* clearscore_demoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clearscore_demoApp.swift; sourceTree = "<group>"; };
-		5ED570AC298413E500CA1595 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5ED570AC298413E500CA1595 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5ED570AE298413E700CA1595 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ED570B1298413E700CA1595 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5ED570B7298413E800CA1595 /* clearscore-demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "clearscore-demoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,7 @@
 		5ED570C1298413E800CA1595 /* clearscore-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "clearscore-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED570C5298413E800CA1595 /* clearscore_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clearscore_demoUITests.swift; sourceTree = "<group>"; };
 		5ED570C7298413E800CA1595 /* clearscore_demoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clearscore_demoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5ED570D429845AA300CA1595 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +97,10 @@
 			isa = PBXGroup;
 			children = (
 				5ED570AA298413E500CA1595 /* clearscore_demoApp.swift */,
-				5ED570AC298413E500CA1595 /* ContentView.swift */,
+				5ED570AC298413E500CA1595 /* MainView.swift */,
 				5ED570AE298413E700CA1595 /* Assets.xcassets */,
 				5ED570B0298413E700CA1595 /* Preview Content */,
+				5ED570D429845AA300CA1595 /* DetailsView.swift */,
 			);
 			path = "clearscore-demo";
 			sourceTree = "<group>";
@@ -257,8 +260,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5ED570AD298413E500CA1595 /* ContentView.swift in Sources */,
+				5ED570AD298413E500CA1595 /* MainView.swift in Sources */,
 				5ED570AB298413E500CA1595 /* clearscore_demoApp.swift in Sources */,
+				5ED570D529845AA300CA1595 /* DetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

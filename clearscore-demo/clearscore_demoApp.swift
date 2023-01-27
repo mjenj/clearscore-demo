@@ -11,9 +11,16 @@ let url = "https://5lfoiyb0b3.execute-api.us-west-2.amazonaws.com/prod/mockcredi
 
 @main
 struct clearscore_demoApp: App {
+    
+    @State private var mainView: MainView?
+        
+    init() {
+        fetchData()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
     
