@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @ObservedObject private var viewModel = CreditScoreViewModel()
     @State private var hideLoader: Bool? = true
     
     var body: some View {
@@ -19,12 +20,12 @@ struct MainView: View {
             VStack{
                 ProgressView().isHidden(hideLoader!)
                 NavigationLink(
-                    destination: DetailsView(message: "Data"),
+                    destination: DetailsView(message: viewModel.getScore().description),
                     label: {
                         VStack{
                             Text("Your credit score is")
-                            Text("300")
-                            Text("out of 700")
+                            Text(viewModel.getScore().description)
+                            Text("out of \(viewModel.getMaxScore().description)")
                         }
                     
                     .frame(width: 300, height: 300)

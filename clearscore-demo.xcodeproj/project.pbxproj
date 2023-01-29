@@ -15,6 +15,8 @@
 		5ED570C6298413E800CA1595 /* clearscore_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED570C5298413E800CA1595 /* clearscore_demoUITests.swift */; };
 		5ED570C8298413E800CA1595 /* clearscore_demoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED570C7298413E800CA1595 /* clearscore_demoUITestsLaunchTests.swift */; };
 		5ED570D529845AA300CA1595 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED570D429845AA300CA1595 /* DetailsView.swift */; };
+		5ED570D72986BEAC00CA1595 /* CreditScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED570D62986BEAC00CA1595 /* CreditScoreViewModel.swift */; };
+		5ED570DB2986CF0100CA1595 /* CreditScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED570DA2986CF0100CA1595 /* CreditScore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		5ED570C5298413E800CA1595 /* clearscore_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clearscore_demoUITests.swift; sourceTree = "<group>"; };
 		5ED570C7298413E800CA1595 /* clearscore_demoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clearscore_demoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5ED570D429845AA300CA1595 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		5ED570D62986BEAC00CA1595 /* CreditScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreViewModel.swift; sourceTree = "<group>"; };
+		5ED570DA2986CF0100CA1595 /* CreditScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				5ED570AE298413E700CA1595 /* Assets.xcassets */,
 				5ED570B0298413E700CA1595 /* Preview Content */,
 				5ED570D429845AA300CA1595 /* DetailsView.swift */,
+				5ED570D62986BEAC00CA1595 /* CreditScoreViewModel.swift */,
+				5ED570DA2986CF0100CA1595 /* CreditScore.swift */,
 			);
 			path = "clearscore-demo";
 			sourceTree = "<group>";
@@ -260,7 +266,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ED570D72986BEAC00CA1595 /* CreditScoreViewModel.swift in Sources */,
 				5ED570AD298413E500CA1595 /* MainView.swift in Sources */,
+				5ED570DB2986CF0100CA1595 /* CreditScore.swift in Sources */,
 				5ED570AB298413E500CA1595 /* clearscore_demoApp.swift in Sources */,
 				5ED570D529845AA300CA1595 /* DetailsView.swift in Sources */,
 			);
