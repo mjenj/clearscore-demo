@@ -10,11 +10,13 @@ import Foundation
 let url = "https://5lfoiyb0b3.execute-api.us-west-2.amazonaws.com/prod/mockcredit/values"
 
 class CreditScoreViewModel: ObservableObject {
+    @Published var isFetchingData: Bool = true
+    @Published var networkError: Bool = false
     @Published var stringData: String?
     @Published var creditScore: CreditScore?
     
     init() {
-        fetchData()
+        self.fetchData()
     }
     
     func fetchData() {
@@ -25,10 +27,19 @@ class CreditScoreViewModel: ObservableObject {
         let task = URLSession.shared.dataTask(with: url) {
             data, response, error in
             
-            if let data = data, let string = String(data: data, encoding: .utf8){
+            if let data = data, let string = String(data: data, encoding: .utf8) {
                 print(string)
-                self.parse(json: data)
-                self.stringData = string
+                DispatchQueue.main.async{
+                    self.parse(json: data)
+                    self.stringData = string
+                    self.isFetchingData = false
+                }
+            }
+            if let error = error {
+                print(error)
+                DispatchQueue.main.async{
+                    self.networkError = true
+                }
             }
         }
         task.resume()
@@ -40,6 +51,26 @@ class CreditScoreViewModel: ObservableObject {
     
     func getMaxScore() -> Int {
         return creditScore?.creditReportInfo.maxScoreValue ?? -1
+    }
+    
+    func getShortTermCredit() -> Double {
+        return creditScore?.creditReportInfo.currentShortTermDebt ?? -1
+    }
+    
+    func getShortTermCreditLimit() -> Double {
+        return creditScore?.creditReportInfo.currentShortTermCreditLimit ?? -1
+    }
+    
+    func getPercentageCreditUsed() -> Int {
+        return creditScore?.creditReportInfo.percentageCreditUsed ?? -1
+    }
+    
+    func getCurrentLongTermDebt() -> Double {
+        return creditScore?.creditReportInfo.currentLongTermDebt ?? -1
+    }
+    
+    func getChangeInLongTermDebt() -> Double {
+        return creditScore?.creditReportInfo.changeInLongTermDebt ?? -1
     }
     
     func parse(json: Data) {

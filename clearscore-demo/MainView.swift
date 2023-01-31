@@ -9,43 +9,50 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject private var viewModel = CreditScoreViewModel()
-    @State private var hideLoader: Bool? = true
     
-    var body: some View {
-//        ZStack {
-//            Circle()
-//                .inset(by: 50)
-//                .stroke(Color.blue, lineWidth: 8)
-        NavigationView {
-            VStack{
-                ProgressView().isHidden(hideLoader!)
-                NavigationLink(
-                    destination: DetailsView(message: viewModel.getScore().description),
-                    label: {
-                        VStack{
-                            Text("Your credit score is")
-                            Text(viewModel.getScore().description)
-                            Text("out of \(viewModel.getMaxScore().description)")
-                        }
-                    
-                    .frame(width: 300, height: 300)
-                    .foregroundColor(Color.white)
-                    .background(Color.gray)
-                    .clipShape(Circle())
-                        
-                })
-            }
-        }
+    func setColor() -> Color{
+        if viewModel.getScore() > viewModel.getMaxScore() * 2/3 {
+            return .green
+        } else if viewModel.getScore() < viewModel.getMaxScore() * 1/3{
+            return .red
             
-//        }
-        .padding()
-//        .sheet(isPresented: $presentingSheet, content: {
-//            Text("Details View")
-//        })
+        } else {
+            return .orange
+        }
     }
     
-    func isLoading(loading: Bool!) {
-        hideLoader = loading
+    var body: some View {
+        NavigationView {
+            ZStack{
+                ProgressView().isHidden(!viewModel.isFetchingData || viewModel.networkError)
+                Text("An error occured").isHidden(!viewModel.networkError)
+                VStack{
+                    NavigationLink(
+                        destination: DetailsView(viewModel: viewModel),
+                        label: {
+                            VStack{
+                                Text("Your credit score is").font(.title3).padding(4)
+                                Text(viewModel.getScore().description)
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(setColor())
+                                    .padding(4)
+                                Text("out of \(viewModel.getMaxScore().description)")
+                                    .font(.title3)
+                                    .padding(4)
+                            }
+                        
+                        .frame(width: 300, height: 300)
+                        .foregroundColor(Color.black)
+                        .background(Color.white)
+                        .addBorder(Color.gray, cornerRadius: .infinity)
+                        .shadow(radius: 10)
+                            
+                    })
+                }.isHidden(viewModel.isFetchingData || viewModel.networkError)
+            }
+        }
+        .padding()
     }
 }
 
@@ -62,5 +69,13 @@ extension View {
         } else {
             self
         }
+    }
+}
+
+extension View {
+    public func addBorder<S>(_ content: S, width: CGFloat = 1, cornerRadius: CGFloat) -> some View where S : ShapeStyle {
+        let roundedRect = RoundedRectangle(cornerRadius: cornerRadius)
+        return clipShape(roundedRect)
+             .overlay(roundedRect.strokeBorder(content, lineWidth: width))
     }
 }
