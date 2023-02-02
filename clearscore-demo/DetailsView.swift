@@ -28,7 +28,7 @@ struct DetailsView: View {
                     
                     Spacer().frame(height: 20)
                     
-                    Text(viewModel.getShortTermCredit().description).padding(4).font(.title2)
+                    Text(viewModel.getShortTermDebt().description).padding(4).font(.title2)
                     Text ("OF").foregroundColor(.gray).italic() +
                     Text(viewModel.getShortTermCreditLimit().description).foregroundColor(.gray)
    

@@ -15,7 +15,6 @@ struct MainView: View {
             return .green
         } else if viewModel.getScore() < viewModel.getMaxScore() * 1/3 {
             return .red
-            
         } else {
             return .orange
         }

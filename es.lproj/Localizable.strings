@@ -16,5 +16,5 @@
 "OF" = " de ";
 "%@ USED" = "%@%% usó";
 "OWE_LOANS" = "Usted debe en sus préstamos ";
-"WHICH_IS" = "El cual es un ";
-"CHANGE_FROM" = " cambio desde el mes pasado!";
+"WHICH_IS" = "Un cambio de ";
+"CHANGE_FROM" = " desde el mes pasado!";

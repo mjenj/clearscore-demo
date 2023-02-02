@@ -7,7 +7,7 @@
 
 import Foundation
 
-let url = "https://5lfoiyb0b3.execute-api.us-west-2.amazonaws.com/prod/mockcredit/values"
+let requestUrl = "https://5lfoiyb0b3.execute-api.us-west-2.amazonaws.com/prod/mockcredit/values"
 
 class CreditScoreViewModel: ObservableObject {
     @Published var isFetchingData: Bool = true
@@ -20,7 +20,7 @@ class CreditScoreViewModel: ObservableObject {
     }
     
     func fetchData() {
-        guard let url = URL(string: url) else {
+        guard let url = URL(string: requestUrl) else {
             return
         }
         
@@ -30,11 +30,12 @@ class CreditScoreViewModel: ObservableObject {
             if let data = data, let string = String(data: data, encoding: .utf8) {
                 print(string)
                 DispatchQueue.main.async{
-                    self.parse(json: data)
+                    _ = self.parse(json: data)
                     self.stringData = string
                     self.isFetchingData = false
                 }
             }
+            
             if let error = error {
                 print(error)
                 DispatchQueue.main.async{
@@ -53,7 +54,7 @@ class CreditScoreViewModel: ObservableObject {
         return creditScore?.creditReportInfo.maxScoreValue ?? -1
     }
     
-    func getShortTermCredit() -> Double {
+    func getShortTermDebt() -> Double {
         return creditScore?.creditReportInfo.currentShortTermDebt ?? -1
     }
     
@@ -73,13 +74,17 @@ class CreditScoreViewModel: ObservableObject {
         return creditScore?.creditReportInfo.changeInLongTermDebt ?? -1
     }
     
-    func parse(json: Data) {
+    func parse(json: Data) -> Bool {
+        var dataParsed = false
         
         do {
             let response = try JSONDecoder().decode(CreditScore.self, from: json)
             creditScore = response
+            dataParsed = true
         } catch {
+            dataParsed = false
             print(error)
         }
+        return dataParsed
     }
 }
