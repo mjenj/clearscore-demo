@@ -23,18 +23,18 @@ struct DetailsView: View {
                 .background(SwiftUI.Color.white)
                 
                 VStack {
-                    Text("Credit used")
+                    Text("CREDIT_USED")
                         .font(.title2)
                     
                     Spacer().frame(height: 20)
                     
                     Text(viewModel.getShortTermCredit().description).padding(4).font(.title2)
-                    Text (" of ").foregroundColor(.gray).italic() +
+                    Text ("OF").foregroundColor(.gray).italic() +
                     Text(viewModel.getShortTermCreditLimit().description).foregroundColor(.gray)
    
                     Spacer().frame(height: 20)
                     
-                    Text("\(viewModel.getPercentageCreditUsed().description)% used")
+                    Text("\(viewModel.getPercentageCreditUsed().description) USED")
                         .foregroundColor(viewModel.getPercentageCreditUsed() < 50 ? .green : .orange)
                 }.frame(height: 60).padding([.bottom], 12)
             }
@@ -48,16 +48,16 @@ struct DetailsView: View {
                     .background(SwiftUI.Color.white)
                 VStack {
                     VStack {
-                        Text("You owe on your loans")
+                        Text("OWE_LOANS")
                             .font(.title2)
                     }
                     VStack {
                         Text("\(viewModel.getCurrentLongTermDebt().description)").font(.title2).padding(12)
                         Group {
-                            Text("Which is a ") +
+                            Text("WHICH_IS") +
                             Text(viewModel.getChangeInLongTermDebt().description)
                                 .foregroundColor(viewModel.getChangeInLongTermDebt() >= 0.0 ? .red : .green) +
-                            Text(" change from last month!")
+                            Text("CHANGE_FROM")
                         }.frame(width: 250)
                             .multilineTextAlignment(.center)
                     }

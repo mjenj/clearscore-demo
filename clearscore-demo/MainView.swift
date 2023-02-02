@@ -13,7 +13,7 @@ struct MainView: View {
     func setColor() -> Color{
         if viewModel.getScore() > viewModel.getMaxScore() * 2/3 {
             return .green
-        } else if viewModel.getScore() < viewModel.getMaxScore() * 1/3{
+        } else if viewModel.getScore() < viewModel.getMaxScore() * 1/3 {
             return .red
             
         } else {
@@ -25,19 +25,19 @@ struct MainView: View {
         NavigationView {
             ZStack{
                 ProgressView().isHidden(!viewModel.isFetchingData || viewModel.networkError)
-                Text("An error occured").isHidden(!viewModel.networkError)
+                Text("ERROR_MESSAGE").isHidden(!viewModel.networkError)
                 VStack{
                     NavigationLink(
                         destination: DetailsView(viewModel: viewModel),
                         label: {
                             VStack{
-                                Text("Your credit score is").font(.title3).padding(4)
+                                Text("CREDIT_TITLE").font(.title3).padding(4)
                                 Text(viewModel.getScore().description)
                                     .font(.largeTitle)
                                     .bold()
                                     .foregroundColor(setColor())
                                     .padding(4)
-                                Text("out of \(viewModel.getMaxScore().description)")
+                                Text("OUT_OF \(viewModel.getMaxScore().description)")
                                     .font(.title3)
                                     .padding(4)
                             }
@@ -59,23 +59,5 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
-    }
-}
-
-extension View {
-    @ViewBuilder func isHidden(_ isHidden: Bool) -> some View {
-        if isHidden {
-            self.hidden()
-        } else {
-            self
-        }
-    }
-}
-
-extension View {
-    public func addBorder<S>(_ content: S, width: CGFloat = 1, cornerRadius: CGFloat) -> some View where S : ShapeStyle {
-        let roundedRect = RoundedRectangle(cornerRadius: cornerRadius)
-        return clipShape(roundedRect)
-             .overlay(roundedRect.strokeBorder(content, lineWidth: width))
     }
 }

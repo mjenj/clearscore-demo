@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  clearscore-demo
+
+  Created by Matt Jenje on 2023/02/01.
+  
+*/
+
+//MainView
+"ERROR_MESSAGE" = "Ocurrió un error, verifique su conexión de red";
+"CREDIT_TITLE" = "Su puntaje de crédito es";
+"OUT_OF %@" = "Fuera de %@";
+
+//DetailsView
+"CREDIT_USED" = "Crédito Utilizado";
+"OF" = " de ";
+"%@ USED" = "%@%% usó";
+"OWE_LOANS" = "Usted debe en sus préstamos ";
+"WHICH_IS" = "El cual es un ";
+"CHANGE_FROM" = " cambio desde el mes pasado!";

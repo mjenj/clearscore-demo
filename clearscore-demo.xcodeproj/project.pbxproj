@@ -17,6 +17,10 @@
 		5ED570D529845AA300CA1595 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED570D429845AA300CA1595 /* DetailsView.swift */; };
 		5ED570D72986BEAC00CA1595 /* CreditScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED570D62986BEAC00CA1595 /* CreditScoreViewModel.swift */; };
 		5ED570DB2986CF0100CA1595 /* CreditScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED570DA2986CF0100CA1595 /* CreditScore.swift */; };
+		5EDCC79F298ABBAB008B270D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EDCC7A1298ABBAB008B270D /* Localizable.strings */; };
+		5EDCC7A4298BAD38008B270D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDCC7A3298BAD38008B270D /* Extensions.swift */; };
+		5EDCC7A5298BD2E2008B270D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EDCC7A1298ABBAB008B270D /* Localizable.strings */; };
+		5EDCC7A6298BD2E4008B270D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EDCC7A1298ABBAB008B270D /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,9 @@
 		5ED570D429845AA300CA1595 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		5ED570D62986BEAC00CA1595 /* CreditScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreViewModel.swift; sourceTree = "<group>"; };
 		5ED570DA2986CF0100CA1595 /* CreditScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScore.swift; sourceTree = "<group>"; };
+		5EDCC7A0298ABBAB008B270D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5EDCC7A2298ABBE6008B270D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5EDCC7A3298BAD38008B270D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +114,7 @@
 				5ED570D429845AA300CA1595 /* DetailsView.swift */,
 				5ED570D62986BEAC00CA1595 /* CreditScoreViewModel.swift */,
 				5ED570DA2986CF0100CA1595 /* CreditScore.swift */,
+				5EDCC7A3298BAD38008B270D /* Extensions.swift */,
 			);
 			path = "clearscore-demo";
 			sourceTree = "<group>";
@@ -123,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				5ED570BB298413E800CA1595 /* clearscore_demoTests.swift */,
+				5EDCC7A1298ABBAB008B270D /* Localizable.strings */,
 			);
 			path = "clearscore-demoTests";
 			sourceTree = "<group>";
@@ -222,6 +231,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 5ED5709E298413E500CA1595;
 			productRefGroup = 5ED570A8298413E500CA1595 /* Products */;
@@ -241,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED570B2298413E700CA1595 /* Preview Assets.xcassets in Resources */,
+				5EDCC7A5298BD2E2008B270D /* Localizable.strings in Resources */,
 				5ED570AF298413E700CA1595 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EDCC79F298ABBAB008B270D /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EDCC7A6298BD2E4008B270D /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED570D72986BEAC00CA1595 /* CreditScoreViewModel.swift in Sources */,
+				5EDCC7A4298BAD38008B270D /* Extensions.swift in Sources */,
 				5ED570AD298413E500CA1595 /* MainView.swift in Sources */,
 				5ED570DB2986CF0100CA1595 /* CreditScore.swift in Sources */,
 				5ED570AB298413E500CA1595 /* clearscore_demoApp.swift in Sources */,
@@ -306,11 +320,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		5EDCC7A1298ABBAB008B270D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5EDCC7A0298ABBAB008B270D /* en */,
+				5EDCC7A2298ABBE6008B270D /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		5ED570C9298413E800CA1595 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -371,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
