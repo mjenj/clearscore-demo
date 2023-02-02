@@ -46,6 +46,26 @@ class CreditScoreViewModel: ObservableObject {
         task.resume()
     }
     
+    //MARK: String return functions
+    
+    func getShortTermDebtAsCurrency() -> String {
+        return formatNumberToCurrency(number: getShortTermDebt() as NSNumber)
+    }
+    
+    func getShortTermCreditLimitAsCurrency() -> String {
+        return formatNumberToCurrency(number: getShortTermCreditLimit() as NSNumber)
+    }
+    
+    func getCurrentLongTermDebtAsCurrency() -> String {
+        return formatNumberToCurrency(number: getCurrentLongTermDebt() as NSNumber)
+    }
+    
+    func getChangeInLongTermDebtAsCurrency() -> String {
+        return formatNumberToCurrency(number: getChangeInLongTermDebt() as NSNumber)
+    }
+    
+    //MARK: Unwrapping functions
+    
     func getScore() -> Int {
         return creditScore?.creditReportInfo.score ?? -1
     }
@@ -72,6 +92,10 @@ class CreditScoreViewModel: ObservableObject {
     
     func getChangeInLongTermDebt() -> Double {
         return creditScore?.creditReportInfo.changeInLongTermDebt ?? -1
+    }
+    
+    func formatNumberToCurrency(number: NSNumber) -> String {
+        return NumberFormatter.localizedString(from: number, number: .currency)
     }
     
     func parse(json: Data) -> Bool {

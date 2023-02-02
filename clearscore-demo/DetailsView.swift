@@ -28,9 +28,9 @@ struct DetailsView: View {
                     
                     Spacer().frame(height: 20)
                     
-                    Text(viewModel.getShortTermDebt().description).padding(4).font(.title2)
+                    Text(viewModel.getShortTermDebtAsCurrency()).padding(4).font(.title2)
                     Text ("OF").foregroundColor(.gray).italic() +
-                    Text(viewModel.getShortTermCreditLimit().description).foregroundColor(.gray)
+                    Text(viewModel.getShortTermCreditLimitAsCurrency()).foregroundColor(.gray)
    
                     Spacer().frame(height: 20)
                     
@@ -52,10 +52,10 @@ struct DetailsView: View {
                             .font(.title2)
                     }
                     VStack {
-                        Text("\(viewModel.getCurrentLongTermDebt().description)").font(.title2).padding(12)
+                        Text(viewModel.getCurrentLongTermDebtAsCurrency()).font(.title2).padding(12)
                         Group {
                             Text("WHICH_IS") +
-                            Text(viewModel.getChangeInLongTermDebt().description)
+                            Text(viewModel.getChangeInLongTermDebtAsCurrency())
                                 .foregroundColor(viewModel.getChangeInLongTermDebt() >= 0.0 ? .red : .green) +
                             Text("CHANGE_FROM")
                         }.frame(width: 250)
@@ -63,9 +63,6 @@ struct DetailsView: View {
                     }
                 }.frame(height: 200)
             }
-            
-            
-            
         }.padding(18)
     }
 }

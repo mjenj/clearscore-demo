@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject private var viewModel = CreditScoreViewModel()
     
-    func setColor() -> Color{
+    func setColor() -> Color {
         if viewModel.getScore() > viewModel.getMaxScore() * 2/3 {
             return .green
         } else if viewModel.getScore() < viewModel.getMaxScore() * 1/3 {
