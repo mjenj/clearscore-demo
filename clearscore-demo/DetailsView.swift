@@ -17,11 +17,7 @@ struct DetailsView: View {
             Spacer().frame(height: 50)
             
             ZStack {
-              RoundedRectangle(cornerRadius: 20)
-                .strokeBorder(SwiftUI.Color.gray, lineWidth: 1)
-                .frame(width: 300, height: 200)
-                .background(SwiftUI.Color.white)
-                
+              CardView()
                 VStack {
                     Text("CREDIT_USED")
                         .font(.title2)
@@ -42,10 +38,7 @@ struct DetailsView: View {
             Spacer().frame(height: 50)
 
             ZStack {
-                RoundedRectangle(cornerRadius: 20)
-                    .strokeBorder(SwiftUI.Color.gray, lineWidth: 1)
-                    .frame(width: 300, height: 200)
-                    .background(SwiftUI.Color.white)
+                CardView()
                 VStack {
                     VStack {
                         Text("OWE_LOANS")

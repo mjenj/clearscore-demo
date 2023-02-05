@@ -21,6 +21,7 @@
 		5EDCC7A4298BAD38008B270D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDCC7A3298BAD38008B270D /* Extensions.swift */; };
 		5EDCC7A5298BD2E2008B270D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EDCC7A1298ABBAB008B270D /* Localizable.strings */; };
 		5EDCC7A6298BD2E4008B270D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EDCC7A1298ABBAB008B270D /* Localizable.strings */; };
+		5EDCC7A829902E48008B270D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDCC7A729902E48008B270D /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		5EDCC7A0298ABBAB008B270D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5EDCC7A2298ABBE6008B270D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5EDCC7A3298BAD38008B270D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5EDCC7A729902E48008B270D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		5ED570A9298413E500CA1595 /* clearscore-demo */ = {
 			isa = PBXGroup;
 			children = (
+				5EDCC7A1298ABBAB008B270D /* Localizable.strings */,
 				5ED570AA298413E500CA1595 /* clearscore_demoApp.swift */,
 				5ED570AC298413E500CA1595 /* MainView.swift */,
 				5ED570AE298413E700CA1595 /* Assets.xcassets */,
@@ -115,6 +118,7 @@
 				5ED570D62986BEAC00CA1595 /* CreditScoreViewModel.swift */,
 				5ED570DA2986CF0100CA1595 /* CreditScore.swift */,
 				5EDCC7A3298BAD38008B270D /* Extensions.swift */,
+				5EDCC7A729902E48008B270D /* CardView.swift */,
 			);
 			path = "clearscore-demo";
 			sourceTree = "<group>";
@@ -131,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				5ED570BB298413E800CA1595 /* clearscore_demoTests.swift */,
-				5EDCC7A1298ABBAB008B270D /* Localizable.strings */,
 			);
 			path = "clearscore-demoTests";
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EDCC7A829902E48008B270D /* CardView.swift in Sources */,
 				5ED570D72986BEAC00CA1595 /* CreditScoreViewModel.swift in Sources */,
 				5EDCC7A4298BAD38008B270D /* Extensions.swift in Sources */,
 				5ED570AD298413E500CA1595 /* MainView.swift in Sources */,
@@ -328,7 +332,8 @@
 				5EDCC7A2298ABBE6008B270D /* es */,
 			);
 			name = Localizable.strings;
-			sourceTree = SOURCE_ROOT;
+			path = ..;
+			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
