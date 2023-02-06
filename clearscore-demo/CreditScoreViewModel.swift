@@ -24,6 +24,9 @@ class CreditScoreViewModel: ObservableObject {
             return
         }
         
+        // Used for testing purposes
+        if creditScore != nil { return }
+        
         let task = URLSession.shared.dataTask(with: url) {
             data, response, error in
             

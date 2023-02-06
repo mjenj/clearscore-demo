@@ -31,6 +31,7 @@ struct MainView: View {
                         label: {
                             VStack{
                                 Text("CREDIT_TITLE").font(.title3).padding(4)
+                                    .accessibilityIdentifier("scoreTextView")
                                 Text(viewModel.getScore().description)
                                     .font(.largeTitle)
                                     .bold()
