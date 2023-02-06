@@ -55,8 +55,8 @@
 		5ED570D429845AA300CA1595 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		5ED570D62986BEAC00CA1595 /* CreditScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreViewModel.swift; sourceTree = "<group>"; };
 		5ED570DA2986CF0100CA1595 /* CreditScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScore.swift; sourceTree = "<group>"; };
-		5EDCC7A0298ABBAB008B270D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5EDCC7A2298ABBE6008B270D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5EDCC7A0298ABBAB008B270D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "clearscore-demo/en.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5EDCC7A2298ABBE6008B270D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = "clearscore-demo/es.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5EDCC7A3298BAD38008B270D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5EDCC7A729902E48008B270D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */

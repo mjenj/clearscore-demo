@@ -39,6 +39,24 @@ final class clearscore_demoTests: XCTestCase {
         XCTAssertFalse(viewModel?.parse(json: data!) ?? false)
     }
     
+    func testGetScoreColourGreen() throws {
+        XCTAssertEqual(viewModel?.getUIScoreColor(), .green)
+    }
+    
+    func testGetScoreColourOrange() throws {
+        viewModel?.creditScore?.creditReportInfo.score = 300
+        viewModel?.creditScore?.creditReportInfo.maxScoreValue = 700
+
+        XCTAssertEqual(viewModel?.getUIScoreColor(), .orange)
+    }
+    
+    func testGetScoreColourRed() throws {
+        viewModel?.creditScore?.creditReportInfo.score = 200
+        viewModel?.creditScore?.creditReportInfo.maxScoreValue = 700
+        
+        XCTAssertEqual(viewModel?.getUIScoreColor(), .red)
+    }
+    
     func testGetScore() throws {
         XCTAssertEqual(viewModel?.getScore(), 514)
     }

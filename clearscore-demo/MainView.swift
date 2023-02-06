@@ -10,20 +10,10 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject private var viewModel = CreditScoreViewModel()
     
-    func setColor() -> Color {
-        if viewModel.getScore() > viewModel.getMaxScore() * 2/3 {
-            return .green
-        } else if viewModel.getScore() < viewModel.getMaxScore() * 1/3 {
-            return .red
-        } else {
-            return .orange
-        }
-    }
-    
     var body: some View {
         NavigationView {
             ZStack{
-                ProgressView().isHidden(!viewModel.isFetchingData || viewModel.networkError)
+                ProgressView().isHidden(!viewModel.isFetchingData || viewModel.networkError).accessibilityIdentifier("spinnerView")
                 Text("ERROR_MESSAGE").isHidden(!viewModel.networkError)
                 VStack{
                     NavigationLink(
@@ -31,13 +21,14 @@ struct MainView: View {
                         label: {
                             VStack{
                                 Text("CREDIT_TITLE").font(.title3).padding(4)
-                                    .accessibilityIdentifier("scoreTextView")
                                 Text(viewModel.getScore().description)
+                                    .accessibilityIdentifier("scoreTextView")
                                     .font(.largeTitle)
                                     .bold()
-                                    .foregroundColor(setColor())
+                                    .foregroundColor(viewModel.getUIScoreColor())
                                     .padding(4)
                                 Text("OUT_OF \(viewModel.getMaxScore().description)")
+                                    .accessibilityIdentifier("outOfTextView")
                                     .font(.title3)
                                     .padding(4)
                             }
@@ -48,7 +39,7 @@ struct MainView: View {
                         .addBorder(Color.gray, cornerRadius: .infinity)
                         .shadow(radius: 10)
                             
-                    })
+                        })
                 }.isHidden(viewModel.isFetchingData || viewModel.networkError)
             }
         }

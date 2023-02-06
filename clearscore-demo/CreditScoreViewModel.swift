@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 let requestUrl = "https://5lfoiyb0b3.execute-api.us-west-2.amazonaws.com/prod/mockcredit/values"
 
@@ -47,6 +48,18 @@ class CreditScoreViewModel: ObservableObject {
             }
         }
         task.resume()
+    }
+    
+    //MARK: UI Logic
+    
+    func getUIScoreColor() -> Color {
+        if getScore() > getMaxScore() * 2/3 {
+            return .green
+        } else if getScore() < getMaxScore() * 1/3 {
+            return .red
+        } else {
+            return .orange
+        }
     }
     
     //MARK: String return functions
