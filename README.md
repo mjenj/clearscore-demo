@@ -1,6 +1,6 @@
-# clearscore-demo
+# iOS-SwiftUI-demo
 
-The code here is a demo for the technical task at Clear Score.
+The code here is a demo for the technical task at Clear Score. This was completed in 1.5 weeks after hours
 
 Notes on the project:
 - The project was done with SwiftUI. This was my first use of SwiftUI but I enjoyed the language quirks and the simplicity of state linking comared to story boards
